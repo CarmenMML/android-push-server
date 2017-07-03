@@ -1,0 +1,64 @@
+{
+  "name": "message",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "sent_date": {
+      "type": "date",
+      "required": true
+    },
+    "id": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "deviceMessages": {
+      "type": "hasMany",
+      "model": "device_message"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "getDeviceMessages": {
+      "accepts": [
+        {
+          "arg": "deviceToken",
+          "type": "string",
+          "required": true,
+          "description": "Device token",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "messageList",
+          "type": "array",
+          "root": true,
+          "description": "Message list of device"
+        }
+      ],
+      "description": "Get device messages",
+      "http": [
+        {
+          "path": "/byDevice",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "925079268327",
+    "firebase_url": "https://asvproject-c2edc.firebaseio.com",
+    "project_id": "asvproject-c2edc",
+    "storage_bucket": "asvproject-c2edc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925079268327:android:f003772de792d82f",
+        "android_client_info": {
+          "package_name": "com.example.lucerito.asvproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925079268327-s03o3gbhqisl6itqsmjb1nov03bcg1ec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lucerito.asvproject",
+            "certificate_hash": "ee6ddd4a5d087703c0401029cf4bd6b86fdcb0a9"
+          }
+        },
+        {
+          "client_id": "925079268327-p7rpq2bv8j3f0hn4v5d0vqqcsdakgjt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqBdZShK8tnFGnwcPvZtsE1VabQAqWSQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925079268327-p7rpq2bv8j3f0hn4v5d0vqqcsdakgjt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

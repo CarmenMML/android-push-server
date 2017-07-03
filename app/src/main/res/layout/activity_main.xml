@@ -17,7 +17,7 @@
             android:id="@+id/activity_main_message_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/activity_margin"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="" />
@@ -38,14 +38,6 @@
             app:layoutManager="LinearLayoutManager"
             tools:context=".MainActivity"
             tools:listitem="@layout/activity_main_list_item" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="5dp"
-            android:src="@drawable/ic_add" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

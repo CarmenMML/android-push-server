@@ -5,9 +5,7 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-/**
- * Created by cmorenol on 10/05/2016.
- */
+
 public class MessageModel implements Parcelable {
 
     private String title; // Required
@@ -64,7 +62,6 @@ public class MessageModel implements Parcelable {
         this.title = title;
         this.text = text;
         this.sent_date = sent_date;
-       // this.id = id;
     }
 
     @Override

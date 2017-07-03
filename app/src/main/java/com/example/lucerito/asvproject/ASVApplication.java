@@ -10,17 +10,13 @@ public class ASVApplication extends Application {
 
     private static ASVApplication sInstance;
     private static ASVApi sASVApi;
-   /* private static ExchangeManager sExchangeManager;
-    private static WarriorModel mWarrior;*/
     private static SharedPreferences sharedPreferences;
 
 
     private static final String PREFERENCES = "preferences";
     private static final int PREFERENCE_MODE_PRIVATE = 0;
-    private static final String PREFERENCE_WARRIOR_NAME = "warrior_name";
-    private static final String PREFERENCE_WARRIOR_SURNAME = "warrior_surname";
-    private static final String PREFERENCE_WARRIOR_DATE = "warrior_date";
-    private static final String PREFERENCE_WARRIOR_CURRENCY = "warrior_currency";
+    private static final String PREFERENCE_FCM_API_TOKEN = "fcm_token";
+    private static final String PREFERENCE_ICON_BADGE = "icon_badge";
 
 
     @Override
@@ -28,12 +24,8 @@ public class ASVApplication extends Application {
         super.onCreate();
         sInstance = this;
         sASVApi = new ASVApi();
-       /// sExchangeManager = new ExchangeManager();
-      ///  mWarrior = new WarriorModel();
         sharedPreferences = getSharedPreferences(PREFERENCES, PREFERENCE_MODE_PRIVATE);
-        //createDatabase();
     }
-
 
     public static synchronized ASVApplication getInstance() {
         return sInstance;
@@ -47,64 +39,20 @@ public class ASVApplication extends Application {
         sASVApi = asvApi;
     }
 
-   /* public static ExchangeManager getExchangeManager() {
-        return sExchangeManager;
+    public static void saveFCMToken(Context context, String token) {
+        saveStringPreferences(context, PREFERENCE_FCM_API_TOKEN, token);
     }
 
-    public static void setExchangeManager(ExchangeManager sExchangeManager) {
-        DragonRidesApplication.sExchangeManager = sExchangeManager;
+    public static String getFCMToken() {
+        return getStringPreferences(PREFERENCE_FCM_API_TOKEN);
     }
 
-    public static WarriorModel getWarrior() {
-        return mWarrior;
+    public static void saveIconBadge(Context context, int badge) {
+        saveIntPreferences(context, PREFERENCE_ICON_BADGE, badge);
     }
 
-    public static void setWarrior(WarriorModel mWarrior) {
-        DragonRidesApplication.mWarrior = mWarrior;
-    }
-*/
-
-
-
-    /*
-    public static void removeFloatPreferences(Context context, String key) {
-        SharedPreferences.Editor editor = context.getSharedPreferences(PREFERENCES, PREFERENCE_MODE_PRIVATE).edit();
-        editor.remove(key);
-        editor.apply();
-    }
-    */
-
-    public static void saveFloatPreferences(Context context, String key, float value) {
-        SharedPreferences.Editor editor = context.getSharedPreferences(PREFERENCES, PREFERENCE_MODE_PRIVATE).edit();
-        editor.putFloat(key, value);
-        editor.apply();
-    }
-
-    public static float getFloatPreferences(String key) {
-        return sharedPreferences.getFloat(key, 1);
-    }
-
-    public static void saveWarriorPreferences(Context context, String name, String surname, String date, String currency) {
-        saveStringPreferences(context, PREFERENCE_WARRIOR_NAME, name);
-        saveStringPreferences(context, PREFERENCE_WARRIOR_SURNAME, surname);
-        saveStringPreferences(context, PREFERENCE_WARRIOR_DATE, date);
-        saveStringPreferences(context, PREFERENCE_WARRIOR_CURRENCY, currency);
-    }
-
-    public static String getUserPreferencesName() {
-        return getStringPreferences(PREFERENCE_WARRIOR_NAME);
-    }
-
-    public static String getUserPreferencesSurname() {
-        return getStringPreferences(PREFERENCE_WARRIOR_SURNAME);
-    }
-
-    public static String getUserPreferencesDate() {
-        return getStringPreferences(PREFERENCE_WARRIOR_DATE);
-    }
-
-    public static String getUserPreferencesCurrency() {
-        return getStringPreferences(PREFERENCE_WARRIOR_CURRENCY);
+    public static int getIconBadge() {
+        return getIntPreferences(PREFERENCE_ICON_BADGE);
     }
 
     public static void saveStringPreferences(Context context, String key, String value) {
@@ -117,13 +65,20 @@ public class ASVApplication extends Application {
         return sharedPreferences.getString(key, "");
     }
 
+    public static void saveIntPreferences(Context context, String key, int value) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(PREFERENCES, PREFERENCE_MODE_PRIVATE).edit();
+        editor.putInt(key, value);
+        editor.apply();
+    }
+
+    public static int getIntPreferences(String key) {
+        return sharedPreferences.getInt(key, 0);
+    }
+
     public static void clearSharedPreferences(Context context) {
         SharedPreferences.Editor editor = context.getSharedPreferences(PREFERENCES, PREFERENCE_MODE_PRIVATE).edit();
         editor.clear().apply();
     }
-
-
-
 
     /*
     RestAdapter adapter;

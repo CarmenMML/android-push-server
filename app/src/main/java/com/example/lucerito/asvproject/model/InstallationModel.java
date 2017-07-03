@@ -5,11 +5,7 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-///import demo.com.dragonridesapp.manager.ExchangeManager;
 
-/**
- * Created by cmorenol on 10/05/2016.
- */
 public class InstallationModel implements Parcelable {
 
     private String appId;

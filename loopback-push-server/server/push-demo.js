@@ -90,9 +90,9 @@ module.exports = function (app) {
       // Hack to set the app id to a fixed value so that we don't have to change
       // the client settings
       Application.beforeSave = function (next) {
-        if (this.name === demoApp.name) {
+       // if (this.name === demoApp.name) {
           this.id = 'loopback-push-server';
-        }
+        //}
         next();
       };
       Application.register(

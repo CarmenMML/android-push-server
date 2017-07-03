@@ -3,9 +3,7 @@ package com.example.lucerito.asvproject.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by cmorenol on 10/05/2016.
- */
+
 public class DeviceMessageModel implements Parcelable {
 
     private String deviceTokenId;

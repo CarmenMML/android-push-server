@@ -15,7 +15,7 @@
       "required": true
     },
     "sent_date": {
-      "type": "date",
+      "type": "string",
       "required": true
     },
     "id": {
@@ -32,7 +32,7 @@
   },
   "acls": [],
   "methods": {
-    "getDeviceMessages": {
+    "getMessagesByDevice": {
       "accepts": [
         {
           "arg": "deviceToken",
@@ -55,7 +55,7 @@
       "description": "Get device messages",
       "http": [
         {
-          "path": "/byDevice",
+          "path": "/messagesByDevice",
           "verb": "get"
         }
       ]

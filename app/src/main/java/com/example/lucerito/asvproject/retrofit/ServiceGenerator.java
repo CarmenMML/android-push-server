@@ -3,9 +3,6 @@ package com.example.lucerito.asvproject.retrofit;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by cmorenol on 10/05/2016.
- */
 public class ServiceGenerator {
 
     private static Retrofit.Builder createRequest(final String url) {

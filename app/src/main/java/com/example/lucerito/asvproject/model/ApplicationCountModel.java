@@ -3,11 +3,7 @@ package com.example.lucerito.asvproject.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 
-/**
- * Created by cmorenol on 10/05/2016.
- */
 public class ApplicationCountModel implements Parcelable {
 
     private int count;
